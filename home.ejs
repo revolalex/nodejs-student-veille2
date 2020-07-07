@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <title>Veille</title>
+    <style>
+      .aRayer {
+        text-decoration: line-through;
+        color: coral;
+      }
+      body {
+        margin: 5vh;
+      }
+      .nonRayer {
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Jumbotron-->
+    <div class="jumbotron jumbotron-fluid">
+      <div class="container">
+        <h1 class="display-4">Student - Techno</h1>
+        <p class="lead">This app will assign a student a technologie watch</p>
+      </div>
+    </div>
+
+    <div class="myDiv">
+      <!-- Student List-->
+      <div>
+        <ul id="myList"></ul>
+
+      </div>
+
+      <!-- Student Form-->
+      <form action="" method="POST">
+        <h5>Student Name</h5>
+        <input class="input-group mb-3" type="text" placeholder="Enter a name" name="name" id="inputName" required/>
+        <button type="button" class="btn btn-outline-success" onclick="addStudent()">Add</button>
+      </form>
+      <br>
+
+      <!-- List -->
+      <div id="nomVeille"></div>
+      <br>
+
+      <!-- Techno Form-->
+      <form action="" method="POST">
+        <h5>Veille Name</h5>
+        <input class="input-group mb-3" type="text" placeholder="Enter a techno" name="techno" id="inputTechno" required/>
+        <button type="submit" class="btn btn-outline-success" onclick="add()">Assign</button>
+      </form>
+      <br>
+
+      <!-- Button -->
+      <button type="button" class="btn btn-outline-danger" onclick="refreshFunction()">Refresh all list</button>
+      <button type="button" class="btn btn-outline-danger" onclick="refreshStudent()">Refresh Student</button>
+      <button type="button" class="btn btn-outline-danger" onclick="refreshVeille()">Refresh Veille</button>
+      <button type="button" class="btn btn-outline-danger" onclick="freeStudent()">Free Student</button>
+    </div>
+    <!-- Javascript-->
+    <script type="text/javascript" src="https://sendeyo.com/show/f7bf159725.js"></script>
+  </body>
+</html>
