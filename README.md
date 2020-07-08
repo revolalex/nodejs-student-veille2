@@ -15,9 +15,8 @@
 * [Contact](#Contact)
 
 ## General info:
-The goal of the project was to learn som backend using node js.
+The goal of the project was to learn some backend using node js.
 The students and technology-watch  are save in .JSON files
-
 
 
 ## Scrennshot
@@ -37,13 +36,15 @@ The students and technology-watch  are save in .JSON files
 
 ## What i praticed, learn:
 
-- I learned how to create a server
-- I learn to use node js
-- I learn how to use node js module
-_ I learn how to create a package.json
-- I learn POST
-- I learned ho to pass data from the front to the back
-- I found this project difficult, it allowed me to learn a lot, and finally I had a lot of fun while carrying it out.
+-learned how to create a server
+-learned to use node js
+-learned how to use node js module
+-learned to create a package.json
+-learned POST
+-learned ho to pass data from the front to the back
+-praticed Bootstrap
+-I found this project difficult, it allowed me to learn a lot, and finally I had a lot of fun while carrying it out.
+
  
  
 ## Status:
