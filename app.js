@@ -18,7 +18,6 @@ function updateUI(res) {
   fs.readFile("home.ejs", function (err, data) {
     res.writeHead(200, { "Content-Type": "text/html" });
     let htmlContent = fs.readFileSync(__dirname + "/home.ejs", "utf8");
-
     // allow me use ejs template code
     let htmlRenderized = ejs.render(htmlContent, { nomArray: nomArray });
     res.write(htmlRenderized);
@@ -106,7 +105,7 @@ server.listen(3000);
 console.log("http://localhost:3000/");
 
 /**
- * @summary use to listen the form post
+ * @summary This will use the default media type application/x-www-form-urlencoded. That means that it will create a query string using the field names as keys and its data as the values.
  * @param {*} request
  * @param {*} callback
  */
@@ -118,6 +117,7 @@ function collectRequestData(request, callback) {
       body += chunk.toString();
     });
     request.on("end", () => {
+      //For ease of accessing each key/value pair we will use Node’s inbuilt querystring module to convert the data to an object:
       callback(parse(body));
     });
   } else {
