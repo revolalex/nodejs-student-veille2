@@ -3,8 +3,11 @@ const http = require("http");
 const { parse } = require("querystring");
 const fs = require("fs");
 const ejs = require("ejs");
-const alerte = require("alert-node")
+const alerte = require("alert-node");
 
+/**
+ * @summary this array we be use to push the input
+ */
 let nomArray = [];
 
 /**
@@ -25,7 +28,7 @@ function updateUI(res) {
 
 /**
  * @summary add a student to the list
- * @param {*} result
+ * @param {*} result it's the input
  * @param {*} res
  */
 function addPerson(result, res) {
@@ -45,7 +48,7 @@ function addPerson(result, res) {
 
 /**
  *
- * @param {*} result
+ * @param {*} result it's the input
  * @param {*} res
  */
 function addTechno(result, res) {
@@ -53,20 +56,19 @@ function addTechno(result, res) {
   fs.unlink("data.json", () => {});
   // find the person with no techno
   let person = nomArray.find((person) => person.techno == null);
-  // assign the techno to available person
+  // if we don' have available student
   if (person == null) {
-      alerte("Oops,  no students left, come later!")
-    //TODO: show beautiful modal
+    alerte("Oops,  no students left, come later!");
     console.log("Oops,  no students left, come later!");
+    updateUI(res);
   } else {
+    // asign a techno to an available student
     person.techno = result.techno;
-
     console.log(nomArray);
-
-    // transforme la saisie en json
+    // change the input into JSON format
     let data = JSON.stringify(nomArray);
     console.log(data);
-    // ecrire le fichier json en ajoutant
+    // write JSON file
     fs.appendFileSync("data.json", data);
     // update
     updateUI(res);
@@ -78,7 +80,6 @@ function addTechno(result, res) {
  */
 const server = http.createServer((req, res) => {
   //POST
-
   if (req.method === "POST") {
     collectRequestData(req, (result) => {
       if (result.name != null) {
@@ -93,11 +94,9 @@ const server = http.createServer((req, res) => {
     //GET, PUT, DELETE (NOT POST!!!)
     fs.readFile("home.ejs", function (err, data) {
       res.writeHead(200, { "Content-Type": "text/html" });
-
       var htmlContent = fs.readFileSync(__dirname + "/home.ejs", "utf8");
-
+      // allow us to use ejs <% %> in home.ejs
       var htmlRenderized = ejs.render(htmlContent, { nomArray: nomArray });
-
       res.write(htmlRenderized);
       return res.end();
     });
