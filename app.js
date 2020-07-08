@@ -1,7 +1,9 @@
+// module
 const http = require('http');
 const { parse } = require('querystring');
 const fs = require("fs");
 const ejs = require('ejs');
+
 
 let nomArray = []
 
@@ -27,8 +29,8 @@ function updateUI(res) {
  * @param {*} res 
  */
 function addPerson(result, res) {
-    //clear file
-    fs.unlink('data.json', ()=> {})
+    // //clear file
+    // fs.unlink('data.json', ()=> {})
 
     var person = {name: result.name, techno: null}
     nomArray.push(person)
@@ -41,6 +43,11 @@ function addPerson(result, res) {
     updateUI(res);
 }
 
+/**
+ * 
+ * @param {*} result 
+ * @param {*} res 
+ */
 function addTechno(result, res) {
     //clear file
     fs.unlink('data.json', ()=> {})
@@ -65,6 +72,9 @@ function addTechno(result, res) {
     }
 }
 
+/**
+ * @summary server
+ */
 const server = http.createServer((req, res) => {
     //POST
     
@@ -98,7 +108,11 @@ server.listen(3000);
 console.log("http://localhost:3000/");
 
 
-
+/**
+ * @summary use to listen the form post
+ * @param {*} request 
+ * @param {*} callback 
+ */
 function collectRequestData(request, callback) {
     const FORM_URLENCODED = 'application/x-www-form-urlencoded';
     if(request.headers['content-type'] === FORM_URLENCODED) {
