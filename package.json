@@ -22,6 +22,7 @@
   },
   "homepage": "https://github.com/revolalex/nodejs-student-veille2#readme",
   "dependencies": {
+    "alert-node": "^3.0.11",
     "ejs": "^3.1.3",
     "fs": "0.0.1-security",
     "http": "0.0.1-security",
