@@ -33,6 +33,8 @@ The students and technology-watch  are save in .JSON files
 * alert-node
 * http
 
+
+
 ## What i praticed, learn:
 
 - I learned how to create a server
@@ -45,7 +47,7 @@ _ I learn how to create a package.json
  
  
 ## Status:
-Project is:  _finished_
+Project is:  _onGoing_
 
 
 
