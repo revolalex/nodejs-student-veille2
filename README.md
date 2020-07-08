@@ -36,14 +36,14 @@ The students and technology-watch  are save in .JSON files
 
 ## What i praticed, learn:
 
--learned how to create a server
--learned to use node js
--learned how to use node js module
--learned to create a package.json
--learned POST
--learned ho to pass data from the front to the back
--praticed Bootstrap
--I found this project difficult, it allowed me to learn a lot, and finally I had a lot of fun while carrying it out.
+- learned how to create a server
+- learned to use node js
+- learned how to use node js module
+- learned to create a package.json
+- learned POST
+- learned ho to pass data from the front to the back
+- praticed Bootstrap
+- I found this project difficult, it allowed me to learn a lot, and finally I had a lot of fun while carrying it out.
 
  
  
