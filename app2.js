@@ -6,9 +6,38 @@ const ejs = require("ejs");
 const alerte = require("alert-node");
 
 /**
- * @summary this array will be use to push the input
+ * @summarythis function will read my data.json  and return the data
  */
-let nomArray = [];
+function getData() {
+  var data = fs.readFileSync("data.json");
+  try {
+    data = JSON.parse(data.json);
+  } catch (e) {
+    data = [];
+  }
+  return data;
+}
+
+/**
+ * @summary this array will be use to conserve the input and push them
+ */
+let nomArray = getData();
+
+
+/** */
+function setData() {
+  console.log("Test");
+  fs.readFile("data.json", (err, fileContent) => {
+    if (err) {
+      console.log("err: " + err);
+    } else {
+      let data = JSON.parse(fileContent);
+      console.log("data: " + data[0].name);
+      nomArray = data;
+    }
+  });
+}
+setData();
 
 /**
  * @summary upadate the frond end (GET)
@@ -32,7 +61,7 @@ function updateUI(res) {
  */
 function addPerson(result, res) {
   // //clear file
-  fs.unlink('data.json', ()=> {})
+  fs.unlink("data.json", () => {});
 
   var person = { name: result.name, techno: null };
   nomArray.push(person);

@@ -75,12 +75,17 @@
       <br>
 
       <!-- Button -->
-      <button type="button" class="btn btn-outline-danger" onclick="refreshFunction()">Refresh all list</button>
+      <!-- <button type="button" class="btn btn-outline-danger" onclick="refreshFunction()">Refresh all list</button>
       <button type="button" class="btn btn-outline-danger" onclick="refreshStudent()">Refresh Student</button>
       <button type="button" class="btn btn-outline-danger" onclick="refreshVeille()">Refresh Veille</button>
-      <button type="button" class="btn btn-outline-danger" onclick="freeStudent()">Free Student</button>
+      <button type="button" class="btn btn-outline-danger" onclick="freeStudent()">Free Student</button> -->
     </div>
     <!-- Javascript-->
 
   </body>
+  <script>
+    if (window.history.replaceState){
+      window.history.replaceState(null, null, window.location.href);
+    }
+  </script>
 </html>
