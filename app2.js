@@ -26,13 +26,13 @@ let nomArray = getData();
 
 /** */
 function setData() {
-  console.log("Test");
+  // console.log("Test");
   fs.readFile("data.json", (err, fileContent) => {
     if (err) {
       console.log("err: " + err);
     } else {
       let data = JSON.parse(fileContent);
-      console.log("data: " + data[0].name);
+      // console.log("data: " + data[0].name);
       nomArray = data;
     }
   });
@@ -117,6 +117,10 @@ const server = http.createServer((req, res) => {
       if (result.techno != null) {
         addTechno(result, res);
       }
+      if (result.erase == "yes"){
+        console.log(result)
+        eraseData(result, res)
+      }
     });
   } else {
     //GET, PUT, DELETE (NOT POST!!!)
@@ -153,3 +157,16 @@ function collectRequestData(request, callback) {
     callback(null);
   }
 }
+
+/**
+ * @summary this function will erase the data and actualize the page
+ * @param {*} result 
+ * @param {*} res 
+ */
+function eraseData(result, res){
+  //    // //clear file
+  // fs.unlinkSync("data.json", () => {});
+  nomArray = ""
+  updateUI(res);
+}
+ 
